@@ -1,0 +1,58 @@
+.github {
+  display: flex;             /* use flexbox */
+  align-items: center;       /* vertical center */
+  justify-content: center;   /* horizontal center */
+  width: 40px;               /* same size as other social icons */
+  height: 40px;
+  border-radius: 50%;        /* makes it circular */
+  background-color: #333;    /* GitHub brand dark gray */
+  color: #fff;               /* white icon */
+  font-size: 18px;           /* consistent icon size */
+  transition: background-color 0.3s ease;
+}
+
+.github:hover {
+  background-color: #24292e; /* GitHub official hover shade */
+}
+
+/* ---------- Professional auth pages (login + signup) ---------- */
+.auth-hero {
+  background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 45%, #fef3c7 100%);
+}
+.auth-card {
+  border-radius: 16px !important;
+  border-top: 4px solid #f97316;
+  box-shadow: 0 20px 50px rgba(249, 115, 22, 0.15) !important;
+}
+.auth-card .title {
+  margin-bottom: 6px;
+}
+.auth-sub {
+  margin-bottom: 20px;
+}
+.auth-badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #c2410c;
+  background: #ffedd5;
+  border-radius: 999px;
+  padding: 4px 14px;
+  margin-bottom: 12px;
+}
+.auth-card .account-form input {
+  border-radius: 10px !important;
+  padding: 12px 14px !important;
+  border: 1px solid #e5e7eb !important;
+}
+.auth-card .account-form input:focus {
+  border-color: #f97316 !important;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+  outline: none;
+}
+.auth-submit {
+  width: 100%;
+  border-radius: 10px !important;
+}

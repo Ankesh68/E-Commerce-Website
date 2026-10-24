@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- Capstone custom layer (works alongside Bootstrap + theme css) --- */
+@layer components {
+  .tw-card-hover {
+    @apply transition duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+  .tw-badge {
+    @apply absolute -top-2 -right-2 min-w-[20px] h-5 px-1 rounded-full text-[11px] flex items-center justify-center font-bold;
+  }
+  .tw-input {
+    @apply w-full border rounded px-3 py-2 outline-none;
+  }
+}
+
+@layer utilities {
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* Banner parallax */
+.banner-parallax {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Product card hover reveal */
+.product-action-link {
+  transition: opacity .25s ease, transform .25s ease;
+}
+.product-item .product-thumb:hover .product-action-link {
+  opacity: 1 !important;
+}
+
+/* Whole-card click affordance */
+.product-card-clickable {
+  cursor: pointer;
+}
+.product-card-clickable:focus-visible {
+  outline: 2px solid #0d6efd;
+  outline-offset: 2px;
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}

@@ -1,0 +1,280 @@
+/* Professional symmetry overrides - category tiles + product cards.
+   Loads after theme style.min.css via App.jsx, so these win. */
+
+/* ---------- Shop by Category: 6 uniform tiles ---------- */
+.category-section.style-4 .section-wrapper .row {
+  align-items: stretch;
+}
+.category-section.style-4 .section-wrapper .row > .col {
+  display: flex;
+}
+.category-section.style-4 .category-item {
+  display: block;
+  width: 100%;
+}
+.category-section.style-4 .category-item .category-inner {
+  height: 260px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 12px;
+  position: relative;
+}
+.category-section.style-4 .category-item .category-thumb {
+  flex: 1 1 auto;
+  min-height: 0;
+  margin: 0 !important;
+  overflow: hidden;
+  background: #fff;
+}
+.category-section.style-4 .category-item .category-thumb img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;
+  display: block;
+  border-radius: 0 !important;
+  padding: 12px;
+}
+.category-section.style-4 .category-item .category-content {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.category-section.style-4 .category-item .category-content h6 {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---------- Product cards: Flipkart-like uniform grid ---------- */
+/* Swiper slides equal height */
+.swiper-slide {
+  height: auto;
+  display: flex;
+}
+.swiper-slide .product-item {
+  width: 100%;
+}
+
+/* Shop grid columns equal height */
+.shop-product-wrap > div[class*="col-"] {
+  display: flex;
+}
+.shop-product-wrap .product-item {
+  width: 100%;
+}
+
+/* Uniform image box 1:1, contain so small/big images look clean */
+.product-item .product-thumb {
+  background: #fff;
+}
+.product-item .product-thumb .pro-thumb {
+  aspect-ratio: 1 / 1;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #f8f9fa;
+  border-radius: 10px 10px 0 0;
+}
+.product-item .product-thumb .pro-thumb img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  padding: 14px;
+  display: block;
+  transform: none !important;
+}
+
+/* Uniform text block so price + button align across row */
+.product-item .product-content {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+.product-item .product-content h5 {
+  min-height: 44px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.3;
+}
+.product-item .product-content .productRating {
+  min-height: 24px;
+  margin-bottom: 6px !important;
+}
+.product-item .product-content .d-flex.align-items-baseline {
+  min-height: 28px;
+}
+.product-item .product-content .product-price-original {
+  color: #868e96;
+  font-size: 0.8rem;
+  line-height: 1.2;
+}
+.product-item .product-content .product-discount-badge {
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+  background: #e8f5e9;
+  color: #2b8a3e;
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.product-item .product-content .lab-btn {
+  margin-top: auto;
+}
+
+/* Mobile: slightly shorter tiles, cards stay square */
+@media (max-width: 575px) {
+  .category-section.style-4 .category-item .category-inner {
+    height: 210px;
+  }
+}
+
+/* ---------- Wishlist: same Flipkart-like uniform grid ---------- */
+.wishlist-page .row > div[class*="col-"] {
+  display: flex;
+}
+.wishlist-page .wishlist-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(136, 136, 136, 0.1);
+  height: 100%;
+}
+.wishlist-page .wishlist-card-image {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #f8f9fa;
+}
+.wishlist-page .wishlist-card-image a {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.wishlist-page .wishlist-card-image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  padding: 14px;
+  display: block;
+}
+.wishlist-page .wishlist-card-content {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 14px 14px 16px;
+}
+.wishlist-page .wishlist-card-content h5 {
+  min-height: 44px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+.wishlist-page .wishlist-card-content .wishlist-price {
+  min-height: 28px;
+  margin-bottom: 10px;
+}
+.wishlist-page .wishlist-card-content .wishlist-actions {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ---------- FAQ: Bootstrap-independent professional accordion ---------- */
+.faq-acc {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.faq-acc .faq-item {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.faq-acc .faq-item.open {
+  border-color: #f97316;
+  box-shadow: 0 6px 20px rgba(249, 115, 22, 0.12);
+}
+.faq-acc .faq-header {
+  margin: 0;
+}
+.faq-acc .faq-q {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 18px;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+  text-align: left;
+}
+.faq-acc .faq-item.open .faq-q {
+  color: #c2410c;
+}
+.faq-acc .faq-q:focus-visible {
+  outline: 2px solid #f97316;
+  outline-offset: 2px;
+}
+.faq-acc .faq-chevron {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #f3f4f6;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+.faq-acc .faq-item.open .faq-chevron {
+  transform: rotate(180deg);
+  background: #ffedd5;
+}
+.faq-acc .faq-a-wrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+.faq-acc .faq-item.open .faq-a-wrap {
+  grid-template-rows: 1fr;
+}
+.faq-acc .faq-a {
+  overflow: hidden;
+  padding: 0 18px;
+  color: #4b5563;
+  line-height: 1.6;
+  min-height: 0;
+}
+.faq-acc .faq-item.open .faq-a {
+  padding: 0 18px 18px;
+}
